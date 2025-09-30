@@ -15,7 +15,7 @@
             font-family: 'Times New Roman', Times, serif;
             line-height: 1.6;
             color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #f5f0e8 0%, #ede7dc 100%);
             min-height: 100vh;
             padding: 20px;
         }
@@ -30,7 +30,7 @@
         }
         
         header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #8b1a32 0%, #a52a44 100%);
             color: white;
             padding: 60px 40px;
             text-align: center;
@@ -70,11 +70,11 @@
         }
         
         h2 {
-            color: #667eea;
+            color: #8b1a32;
             font-size: 1.8em;
             margin-bottom: 20px;
             padding-bottom: 10px;
-            border-bottom: 3px solid #667eea;
+            border-bottom: 3px solid #8b1a32;
         }
         
         .education-header, .experience-header {
@@ -104,7 +104,7 @@
         }
         
         .honors {
-            background: #f0f4ff;
+            background: #faf8f3;
             padding: 15px;
             border-radius: 8px;
             margin-top: 10px;
@@ -131,30 +131,53 @@
         }
         
         .skill-category {
-            background: #f8f9fa;
+            background: #faf8f3;
             padding: 20px;
             border-radius: 10px;
-            border-left: 4px solid #667eea;
+            border-left: 4px solid #8b1a32;
         }
         
         .skill-category h4 {
-            color: #667eea;
+            color: #8b1a32;
             margin-bottom: 10px;
         }
         
-        .coursework {
+        .tabs {
             display: flex;
-            flex-wrap: wrap;
             gap: 10px;
-            margin-top: 10px;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #e0e0e0;
+            flex-wrap: wrap;
         }
         
-        .course-tag {
-            background: #e8ecff;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 0.9em;
-            color: #667eea;
+        .tab {
+            padding: 12px 24px;
+            cursor: pointer;
+            border: none;
+            background: none;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 1.1em;
+            color: #666;
+            transition: all 0.3s;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .tab:hover {
+            color: #8b1a32;
+        }
+        
+        .tab.active {
+            color: #8b1a32;
+            border-bottom: 3px solid #8b1a32;
+            font-weight: bold;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
         }
         
         @media (max-width: 768px) {
@@ -182,12 +205,12 @@
     <div class="container">
         <header>
             <h1>Kaia Eder</h1>
-            <p>Business Analytics Student | Data Enthusiast | Athlete</p>
+            <p>Business Analytics Student</p>
             <div class="contact-info">
-                <span>📍 Moorestown, NJ</span>
-                <a href="mailto:keder@students.stonehill.edu">📧 keder@students.stonehill.edu</a>
-                <span>📱 (856) 505-7244</span>
-                <a href="https://linkedin.com" target="_blank">💼 LinkedIn</a>
+                <span>Moorestown, NJ</span>
+                <a href="mailto:keder@students.stonehill.edu">keder@students.stonehill.edu</a>
+                <span>(856) 505-7244</span>
+                <a href="https://linkedin.com" target="_blank">LinkedIn</a>
             </div>
         </header>
         
@@ -205,141 +228,204 @@
                         <strong>Honors & Awards:</strong> Moreau Honors Program | Dean's List (Fall 2024, Spring 2025)
                     </div>
                 </div>
-                
-                <h4 style="margin-top: 20px; color: #555;">Relevant Coursework</h4>
-                <div class="coursework">
-                    <span class="course-tag">Business Visualization</span>
-                    <span class="course-tag">Probability and Statistics</span>
-                    <span class="course-tag">R for Business Analytics</span>
-                    <span class="course-tag">Financial Mathematics</span>
-                    <span class="course-tag">Linear Algebra</span>
-                    <span class="course-tag">Multivariable Calculus</span>
-                    <span class="course-tag">Data Science/Analytics</span>
-                </div>
             </section>
             
             <section id="experience">
-                <h2>Work Experience</h2>
+                <h2>Experience & Activities</h2>
                 
-                <div class="item">
-                    <div class="experience-header">
-                        <div>
-                            <h3>Learning Assistant</h3>
-                            <p class="subtitle">Stonehill College</p>
-                        </div>
-                        <span class="date">Present</span>
-                    </div>
-                    <ul>
-                        <li>Assist students in understanding course material and developing problem-solving skills</li>
-                        <li>Collaborate with faculty to support student learning and academic success</li>
-                    </ul>
+                <div class="tabs">
+                    <button class="tab active" onclick="showTab('work')">Work Experience</button>
+                    <button class="tab" onclick="showTab('leadership')">Leadership Experience</button>
+                    <button class="tab" onclick="showTab('activities')">Collegiate Activities</button>
+                    <button class="tab" onclick="showTab('courses')">Course Experience</button>
+                    <button class="tab" onclick="showTab('skills')">Skills & Certifications</button>
                 </div>
                 
-                <div class="item">
-                    <div class="experience-header">
-                        <div>
-                            <h3>Mad Science of West New Jersey</h3>
-                            <p class="subtitle">Mad Scientist - Science Instructor | Burlington, NJ</p>
+                <div id="work" class="tab-content active">
+                    <div class="item">
+                        <div class="experience-header">
+                            <div>
+                                <h3>Learning Assistant - Introduction to Data Analytics</h3>
+                                <p class="subtitle">Meehan School of Business | Stonehill College</p>
+                            </div>
+                            <span class="date">Sep 2025 - Present</span>
                         </div>
-                        <span class="date">May 2025 - Aug 2025</span>
+                        <ul>
+                            <li>Assist professor in delivering an Introduction to Data Analytics course by supporting lectures and reinforcing concepts in data visualization, predictive modeling, and business intelligence</li>
+                            <li>Hold review sessions to clarify course content and provide hands-on support with Excel, SAS Viya, and Power BI</li>
+                            <li>Foster an inclusive and collaborative learning environment by mentoring students and promoting data-driven skills</li>
+                        </ul>
                     </div>
-                    <ul>
-                        <li>Completed 30 hours of comprehensive training program to effectively lead and manage youth science sessions with an emphasis on safety and engagement</li>
-                        <li>Delivered engaging, hands-on STEM activities and experiments to children ages 6-12, promoting learning through interactive science programs</li>
-                    </ul>
+                    
+                    <div class="item">
+                        <div class="experience-header">
+                            <div>
+                                <h3>Mad Scientist - Science Instructor</h3>
+                                <p class="subtitle">Mad Science of West New Jersey | Burlington, NJ</p>
+                            </div>
+                            <span class="date">May 2025 - Aug 2025</span>
+                        </div>
+                        <ul>
+                            <li>Completed 30 hours of comprehensive training program to effectively lead and manage youth science sessions with an emphasis on safety and engagement</li>
+                            <li>Delivered engaging, hands-on STEM activities and experiments to children ages 6-12, promoting learning through interactive science programs</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="item">
+                        <div class="experience-header">
+                            <div>
+                                <h3>Assistant Track & Field Coach</h3>
+                                <p class="subtitle">Delran Track & Field | Delran High School</p>
+                            </div>
+                            <span class="date">May - June 2023, 2024, 2025</span>
+                        </div>
+                        <ul>
+                            <li>Coordinated with staff to facilitate comprehensive plans and reviews for student athletes</li>
+                            <li>Designed individualized training and workouts to enhance progression and development of all athletes</li>
+                        </ul>
+                    </div>
                 </div>
                 
-                <div class="item">
-                    <div class="experience-header">
-                        <div>
-                            <h3>Delran Track & Field</h3>
-                            <p class="subtitle">Assistant Track & Field Coach | Delran High School</p>
+                <div id="leadership" class="tab-content">
+                    <div class="item">
+                        <div class="experience-header">
+                            <div>
+                                <h3>Co-President, Founder</h3>
+                                <p class="subtitle">Business Analytics Club | Stonehill College</p>
+                            </div>
+                            <span class="date">Sep 2025 - Present</span>
                         </div>
-                        <span class="date">May - June 2023, 2024, 2025</span>
+                        <ul>
+                            <li>Founded and lead the Business Analytics Club, coordinating with advisors and the Student Government Association to establish a hands-on learning community</li>
+                            <li>Organized and facilitated programming and AI workshops and data contests to enhance members' technical and analytical skills</li>
+                            <li>Managed executive board activities providing leadership in meeting coordination, task delegation, and member support to ensure efficient club operations</li>
+                        </ul>
                     </div>
-                    <ul>
-                        <li>Coordinated with staff to facilitate comprehensive plans and reviews for student athletes</li>
-                        <li>Designed individualized training and workouts to facilitate progression and development of all athletes</li>
-                    </ul>
+                    
+                    <div class="item">
+                        <div class="experience-header">
+                            <div>
+                                <h3>Secretary</h3>
+                                <p class="subtitle">Student Athletic Advisory Committee | Stonehill College</p>
+                            </div>
+                            <span class="date">Aug 2024 - Present</span>
+                        </div>
+                        <ul>
+                            <li>Maintained accurate records of weekly meetings and effectively distributed records across the committee via email</li>
+                            <li>Assisted in event planning, logistics, and execution while coordinating with the Leadership Council</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="item">
+                        <div class="experience-header">
+                            <div>
+                                <h3>Facilitator, Mentor</h3>
+                                <p class="subtitle">First-Year Experience | Stonehill College</p>
+                            </div>
+                            <span class="date">Aug - Dec 2024 - Present</span>
+                        </div>
+                        <ul>
+                            <li>Provided mentorship and guidance to first-year students, helping them achieve personal and academic growth</li>
+                            <li>Facilitated classes, offering valuable feedback and advice while collaborating with organizational leadership to align goals</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="item">
+                        <div class="experience-header">
+                            <div>
+                                <h3>House Representative Council Member</h3>
+                                <p class="subtitle">Colonial & Commonwealth Courts | Stonehill College</p>
+                            </div>
+                            <span class="date">Aug 2025 - Present</span>
+                        </div>
+                        <ul>
+                            <li>Advocated for the interests of townhouse residents by serving as a liaison between students and Residence Life</li>
+                            <li>Collaborated with council members and the Residence Director to review policies, allocate programming funds, and support initiatives that enhance community engagement and the residential experience</li>
+                        </ul>
+                    </div>
                 </div>
-            </section>
-            
-            <section id="leadership">
-                <h2>Leadership Experience</h2>
                 
-                <div class="item">
-                    <div class="experience-header">
-                        <div>
-                            <h3>Student Athletic Advisory Committee</h3>
-                            <p class="subtitle">Secretary | Stonehill College</p>
+                <div id="activities" class="tab-content">
+                    <div class="item">
+                        <div class="experience-header">
+                            <div>
+                                <h3>Captain - Varsity Track & Field</h3>
+                                <p class="subtitle">NCAA Division I, Northeast Conference | Stonehill College</p>
+                            </div>
+                            <span class="date">Oct 2022 - Present</span>
                         </div>
-                        <span class="date">Aug 2024 - Present</span>
+                        <ul>
+                            <li>Balanced a full academic course load with a team commitment averaging 25 hours per week</li>
+                        </ul>
                     </div>
-                    <ul>
-                        <li>Maintained accurate records of weekly meetings and effectively distributed records across the committee via email</li>
-                        <li>Assisted in event planning, logistics, and execution while coordinating with the Leadership Council</li>
-                    </ul>
                 </div>
                 
-                <div class="item">
-                    <div class="experience-header">
-                        <div>
-                            <h3>Hope Helps</h3>
-                            <p class="subtitle">Ambassador | Stonehill College</p>
-                        </div>
-                        <span class="date">Mar 2025 - Present</span>
+                <div id="courses" class="tab-content">
+                    <div class="item">
+                        <h3>Completed Coursework</h3>
+                        <ul>
+                            <li>Bayesian Statistics</li>
+                            <li>Business Visualization</li>
+                            <li>Calculus I</li>
+                            <li>Calculus II</li>
+                            <li>Discrete Mathematics</li>
+                            <li>Financial Mathematics</li>
+                            <li>International Business</li>
+                            <li>Introduction to Data Analytics</li>
+                            <li>Introduction to Data Science</li>
+                            <li>Linear Algebra</li>
+                            <li>Multivariable Calculus</li>
+                            <li>Operations Management</li>
+                            <li>R For Business Analytics</li>
+                            <li>Statistics for Science</li>
+                        </ul>
                     </div>
-                    <ul>
-                        <li>Trained in QPR (Question, Persuade, Refer) suicide prevention techniques to provide peer support to connect students with mental health resources</li>
-                        <li>Served as a mental health advocate on campus, fostering a supportive environment and reducing stigma on seeking help</li>
-                    </ul>
                 </div>
                 
-                <div class="item">
-                    <div class="experience-header">
-                        <div>
-                            <h3>First-Year Experience</h3>
-                            <p class="subtitle">Facilitator, Mentor | Stonehill College</p>
+                <div id="skills" class="tab-content">
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h4>Computer Applications</h4>
+                            <p>Microsoft Office 365, Mac and Windows OS, Google Workspace</p>
                         </div>
-                        <span class="date">Aug - Dec 2024 - Present</span>
-                    </div>
-                    <ul>
-                        <li>Provided mentorship and guidance to first-year students, helping them achieve personal and academic growth</li>
-                        <li>Facilitated classes, offering valuable feedback and advice while collaborating with organizational leadership to align goals</li>
-                    </ul>
-                </div>
-            </section>
-            
-            <section id="activities">
-                <h2>Collegiate Activities</h2>
-                <div class="item">
-                    <div class="experience-header">
-                        <div>
-                            <h3>Varsity Track & Field</h3>
-                            <p class="subtitle">NCAA Division I, Northeast Conference | Stonehill College</p>
+                        <div class="skill-category">
+                            <h4>Proficient</h4>
+                            <p>Excel, R</p>
                         </div>
-                        <span class="date">Oct 2022 - Present</span>
-                    </div>
-                    <ul>
-                        <li>Balanced a full academic course load with a team commitment averaging 25 hours per week</li>
-                    </ul>
-                </div>
-            </section>
-            
-            <section id="skills">
-                <h2>Skills</h2>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h4>Computer Applications</h4>
-                        <p>Microsoft Office 365, Excel, Mac and Windows OS, Google Workspace</p>
-                    </div>
-                    <div class="skill-category">
-                        <h4>Programming & Analytics</h4>
-                        <p>SAS Enterprise Miner/Guide, R, Python (Beginner Proficiency)</p>
+                        <div class="skill-category">
+                            <h4>Beginner Proficiency</h4>
+                            <p>SAS Enterprise Miner/Guide, Python</p>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Certifications</h4>
+                            <p>SAS: Data Literacy in Practice</p>
+                        </div>
                     </div>
                 </div>
             </section>
         </main>
     </div>
+    
+    <script>
+        function showTab(tabName) {
+            // Hide all tab contents
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Remove active class from all tabs
+            const tabs = document.querySelectorAll('.tab');
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected tab content
+            document.getElementById(tabName).classList.add('active');
+            
+            // Add active class to clicked tab
+            event.target.classList.add('active');
+        }
+    </script>
 </body>
 </html>
